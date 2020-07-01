@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.mainNav {
+  position: relative;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  box-shadow: 1px 1px 4px 0 black;
+}
+.hamburger-logo {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  color: rgb(26, 23, 23);
+}
+.menu-wrap-hamburger {
+  position: relative;
+  z-index: 3;
+  top: 0;
+  right: 0;
+}
+.menu-wrap-hamburger .toggler {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  opacity: 0;
+}
+.menu-wrap-hamburger .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+}
+.menu-wrap-hamburger .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.menu-wrap-hamburger .hamburger > div::before,
+.menu-wrap-hamburger .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: -7px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+.menu-wrap-hamburger .hamburger > div::after {
+  top: 7px;
+}
+.menu-wrap-hamburger .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+.menu-wrap-hamburger .toggler:checked + .hamburger > div::before,
+.menu-wrap-hamburger .toggler:checked + .hamburger > div::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.menu-wrap-hamburger .toggler:checked ~ .menu {
+  visibility: visible;
+}
+.menu-wrap-hamburger .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  z-index:2;
+  overflow: hidden;
+  background-color: white;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  border-top: 5px solid rgb(26, 23, 23);
+}
+.menu-wrap-hamburger .menu ul {
+  padding-top: 2rem;
+}
+.menu-wrap-hamburger .menu ul li {
+  list-style: none;
+  padding: 2rem 0rem;
+}
+.menu-wrap-hamburger .menu ul li a{
+    color: rgb(26, 23, 23);
+    font-size: 1.2rem;
+}
+.logo {
+  padding-left: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.icons {
+  list-style: none;
+  display: flex;
+}
+.icons li:first-child {
+  padding-right: 1rem;
+}
+.icons li a {
+  color: rgb(26, 23, 23);
+}
+.loginbtn{
+    display: none;
+}
+.loginbtn ul{
+    display: flex;
+
+}
+.loginbtn ul li{
+    padding: 0rem 1rem;
+    list-style: none;
+}
+.btns{
+    text-decoration: none;
+    
+    background: darkslategray;
+    padding: 0.5rem 0.8rem;
+    border-radius: 3px;
+    color: white;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.educatorImg {
+  width: 100%;
+}
+.educatorImg img {
+  width: 100%;
+}
+.pageIntro{
+    background: rgb(26, 23, 23);
+    color: white;
+    padding: 2rem;
+    line-height: 1.7; 
+
+}
+ .btn{
+    background: darkslategrey;
+    text-align: center;
+    padding: .7rem 0rem;
+    border-radius: 4px;
+}
+ .btn a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.courseFinder{
+    padding: 2rem;
+    text-align: start;
+
+
+}
+.courseFinder .btn{
+    background-color: #ccc;
+}
+.getApp{
+    width: 100%;
+    position: relative;
+    z-index: -1;
+
+}
+
+.downloadCard{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white ;
+    padding: 0rem 2rem;
+    min-width: 300px;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 1px 1px 4px 0 black;
+
+}
+.getApp .phoneimg{
+    width:100%
+}
+.appbtnDIV{
+    display: flex;
+}
+.appstore{
+    margin-right: 1rem;
+}
+.appbtn img{
+    width: 150px;  
+}
+@media(min-width: 780px){
+    .pad{
+        padding: 0rem 5rem;
+    }
+    .icons{
+        display: none;
+    }
+    .loginbtn{
+        display: flex;
+    }
+    .banner{
+        flex-direction: row;
+        
+
+    }
+    .banner >div{
+        min-height: 350px;
+    }
+    .pageIntro{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .educatorImg{
+        order: 1;
+    }
+    .courseFinder{
+        padding-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: auto;
+    }
+    .courseFinder p{
+        padding: 1rem 10rem
+    }
+    .courseFinder .btn{
+        display: none;
+    }
+    .getApp .imgdiv{
+        height: 400px;
+        overflow: hidden;
+    }
+    .downloadCard{
+        display: flex;
+        flex-direction: row;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+    }
+    .text{
+        margin-right: 2rem;
+    }
+
+}
+@media(min-width:880px){
+    .pad{
+        padding: 0rem 10rem;
+    }
+}
+@media(min-width: 1000px){
+
+}
+
+
+
